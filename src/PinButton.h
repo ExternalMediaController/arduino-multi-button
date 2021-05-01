@@ -41,7 +41,8 @@
  * }
  * ```
  */
-class PinButton : public MultiButton {
+template<int SINGLECLICK_DELAY = 250, int LONGCLICK_DELAY = 300>
+class PinButton : public MultiButton<SINGLECLICK_DELAY, LONGCLICK_DELAY> {
   public:
     /**
      * Construct a new PinButton using a switch connected between
@@ -50,7 +51,7 @@ class PinButton : public MultiButton {
      * 
      * @param pin {int} Arduino pin to use
      */
-    PinButton(int pin) : MultiButton(), _pin(pin) {
+    PinButton(int pin) : MultiButton<SINGLECLICK_DELAY, LONGCLICK_DELAY>(), _pin(pin) {
       pinMode(pin, INPUT_PULLUP);
     }
 
@@ -61,7 +62,7 @@ class PinButton : public MultiButton {
      * It's recommended to call this method in e.g. loop().
      */
     void update() {
-      MultiButton::update(digitalRead(_pin) == 0);
+      MultiButton<SINGLECLICK_DELAY, LONGCLICK_DELAY>::update(digitalRead(_pin) == 0);
     }
 
   private:

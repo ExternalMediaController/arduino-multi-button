@@ -9,7 +9,7 @@
 
 // Create a new button object, listening on pin 5.
 // Note: you can create as many as you like.
-PinButton myButton(5);
+PinButton<250, 500> myButton(5);
 
 void setup() {
   // Initialize serial port at 115k2 baud.

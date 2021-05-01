@@ -9,7 +9,7 @@
 
 // Create a new button object, listening on pin 5.
 // You can have as many buttons as you like.
-PinButton myButton(5);
+PinButton<> myButton(5);
 
 bool ledOn = false;
 

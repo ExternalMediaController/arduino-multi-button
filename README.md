@@ -31,7 +31,7 @@ Connect a switch (or use a piece of wire) between pin 5 and ground (GND).
 
 // Create a new button object, listening on pin 5.
 // You can have as many buttons as you like.
-PinButton myButton(5);
+PinButton<> myButton(5);
 
 bool ledOn = false;
 
@@ -59,7 +59,8 @@ void loop() {
 #include <PinButton.h>
 
 // Create a new button object, listening on pin 5.
-PinButton myButton(5);
+// Change the default time for long click
+PinButton<250, 2000> myButton(5);
 
 void setup() {
   // Initialize serial port at 115k2 baud.
@@ -79,6 +80,10 @@ void loop() {
 
   if (myButton.isDoubleClick()) {
     Serial.println("double");
+  }
+
+  if (myButton.isLongClick()) {
+    Serial.println("long 2000ms");
   }
 }
 ```

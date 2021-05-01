@@ -44,6 +44,7 @@
  * }
  * ```
  */
+template<int SINGLECLICK_DELAY = 250, int LONGCLICK_DELAY = 300>
 class MultiButton {
   public:
     /**
@@ -148,8 +149,8 @@ class MultiButton {
 
   private:
     static const int DEBOUNCE_DELAY    =  20; // ms
-    static const int SINGLECLICK_DELAY = 250; // ms
-    static const int LONGCLICK_DELAY   = 300; // ms
+    //static const int SINGLECLICK_DELAY = 250; // ms
+    //static const int LONGCLICK_DELAY   = 300; // ms
 
     /**
      * Note:
