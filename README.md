@@ -5,10 +5,10 @@ Simple, reliable button with multiple types of click detection.
 Supports debounced click, singleClick, doubleClick, longPress and release
 events.
 
-Provides a generic MultiButton class that can handle any type of input, and
+Provides a generic [MultiButton](https://github.com/poelstra/arduino-multi-button/) class that can handle any type of input, and
 the PinButton wrapper to simply use an Arduino digital pin as a button.
 
-Please Star the project on GitHub if you like it!
+Added template parameters to define delay length of the clicks.
 
 # Installing the library
 

@@ -65,6 +65,11 @@ class PinButton : public MultiButton<SINGLECLICK_DELAY, LONGCLICK_DELAY> {
       MultiButton<SINGLECLICK_DELAY, LONGCLICK_DELAY>::update(digitalRead(_pin) == 0);
     }
 
+    int getPin()
+    {
+      return _pin;
+    }
+
   private:
     int _pin;
 };
