@@ -47,12 +47,12 @@ class PinButton : public MultiButton<SINGLECLICK_DELAY, LONGCLICK_DELAY> {
     /**
      * Construct a new PinButton using a switch connected between
      * an Arduino pin and ground.
-     * The internal pull-up is automatically enabled.
+     * The pinMode should be set in setup().
      * 
      * @param pin {int} Arduino pin to use
      */
     PinButton(int pin) : MultiButton<SINGLECLICK_DELAY, LONGCLICK_DELAY>(), _pin(pin) {
-      pinMode(pin, INPUT_PULLUP);
+      //pinMode(pin, INPUT_PULLUP);
     }
 
     /**
@@ -65,7 +65,10 @@ class PinButton : public MultiButton<SINGLECLICK_DELAY, LONGCLICK_DELAY> {
       MultiButton<SINGLECLICK_DELAY, LONGCLICK_DELAY>::update(digitalRead(_pin) == 0);
     }
 
-    int getPin()
+    /**
+     * Return actual pin number.
+    */
+    const int getPin() const
     {
       return _pin;
     }
